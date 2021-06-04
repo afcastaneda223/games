@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[ show edit update destroy upvote downvote ]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /articles or /articles.json
@@ -63,6 +63,16 @@ class ArticlesController < ApplicationController
   def correct_user
     @article = current_user.articles.find_by(id: params[:id])
     redirect_to articles_path, notice: "Not Authorized To Edit This Article" if @article.nil?
+  end
+
+  def upvote
+    @article.upvote_from current_user
+    redirect_to articles_path
+  end 
+
+  def downvote
+    @article.downvote_from current_user
+    redirect_to articles_path
   end
 
   private
