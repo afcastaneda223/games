@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.order(:cached_votes_score => :desc)
   end
 
   # GET /articles/1 or /articles/1.json
