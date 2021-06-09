@@ -1,0 +1,31 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  background-color: rgb(78, 68, 62);
+  font-family: "Chivo", sans-serif;
+  // font-family: "Lato", sans-serif;
+}
+
+.dot {
+  font-size: xx-small;
+  color: rgb(239, 97, 54);
+}
+
+#footer {
+  background-color: rgb(78, 68, 62);
+  color: rgb(239, 97, 54);
+}
+
+.navbar {
+  background-color: white;
+  font-family: "Chivo", sans-serif;
+}
+
+.social {
+  font-size: large;
+  i {
+    color: rgb(239, 97, 54);
+  }
+}
